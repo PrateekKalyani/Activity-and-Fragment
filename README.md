@@ -4,7 +4,8 @@ I have read Activity Lifecycle from the following links -:
 
     2- https://www.javatpoint.com/android-life-cycle-of-activity
 
-    3- The project name "MyApplication" is the same project as in the 2'nd link, but I have added 2 activities and one button to switch between the activity to learn more about the activity life cycle. 
+    3- The project name "MyApplication" is the same project as in the 2'nd link, but I have added 2 activities 
+    and one button to switch between the activity to learn more about the activity life cycle. 
 
 I have read about fragment from the YouTube PlayList-:
 
