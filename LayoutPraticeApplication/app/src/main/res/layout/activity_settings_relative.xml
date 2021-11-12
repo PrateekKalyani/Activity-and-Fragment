@@ -1,0 +1,269 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".SettingsLinearActivity"
+    >
+
+    <Button
+        android:id="@+id/switchButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAllCaps="false"
+        android:text="Switch"
+        android:layout_alignParentEnd="true"
+        android:backgroundTint="@color/white"
+        android:textColor="@color/black"
+        android:layout_gravity="center"
+        android:layout_marginTop="4dp"
+        android:layout_marginEnd="20dp"
+        />
+
+    <RelativeLayout
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="8dp"
+        >
+
+        <ImageView
+            android:id="@+id/backButton"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:src="@drawable/ic_baseline_arrow_back_24"
+            android:layout_marginTop="3dp"
+            android:layout_marginStart="7dp"
+            />
+
+        <TextView
+            android:id="@+id/settingsText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Settings"
+            android:textStyle="bold"
+            android:textSize="25sp"
+            android:layout_marginStart="24dp"
+            android:textColor="#020203"
+            android:layout_toEndOf="@id/backButton"
+            />
+    </RelativeLayout>
+
+    <ScrollView
+        android:id="@+id/scrollView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/toolbar">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingHorizontal="14dp"
+            android:orientation="vertical"
+            android:paddingBottom="20dp">
+
+            <EditText
+                android:id="@+id/searchBar"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Search"
+                android:layout_marginTop="20dp"
+                android:background="@drawable/rounded_edittext"
+                android:padding="13dp"
+                android:drawableStart="@drawable/ic_baseline_search_24"
+                android:textSize="18sp"
+                android:drawablePadding="10dp"
+                />
+
+            <TextView
+                android:id="@+id/inviteText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Follow and Invite Friends"
+                android:drawableStart="@drawable/ic_baseline_person_add_24"
+                android:drawablePadding="14dp"
+                android:textSize="18sp"
+                android:textColor="#020203"
+                android:paddingVertical="10dp"
+                android:layout_marginTop="10dp"
+                android:layout_below="@id/searchBar"/>
+
+            <TextView
+                android:id="@+id/notificationText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Notifications"
+                android:drawableStart="@drawable/ic_baseline_notifications_none_24"
+                android:drawablePadding="14dp"
+                android:textSize="18sp"
+                android:textColor="#020203"
+                android:paddingVertical="10dp"
+                android:layout_marginTop="10dp"
+                android:layout_below="@id/inviteText"
+                />
+
+            <TextView
+                android:id="@+id/privacyText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Privacy"
+                android:drawableStart="@drawable/ic_baseline_lock_24"
+                android:drawablePadding="14dp"
+                android:textSize="18sp"
+                android:textColor="#020203"
+                android:paddingVertical="10dp"
+                android:layout_marginTop="10dp"
+                android:layout_below="@id/notificationText"/>
+
+            <TextView
+                android:id="@+id/securityText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Security"
+                android:drawableStart="@drawable/ic_baseline_security_24"
+                android:drawablePadding="14dp"
+                android:textSize="18sp"
+                android:textColor="#020203"
+                android:paddingVertical="10dp"
+                android:layout_marginTop="10dp"
+                android:layout_below="@id/privacyText"/>
+
+            <TextView
+                android:id="@+id/adsText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Ads"
+                android:drawableStart="@drawable/ic_baseline_campaign_24"
+                android:drawablePadding="14dp"
+                android:textSize="18sp"
+                android:textColor="#020203"
+                android:paddingVertical="10dp"
+                android:layout_marginTop="10dp"
+                android:layout_below="@id/securityText"/>
+
+            <TextView
+                android:id="@+id/accountText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Account"
+                android:drawableStart="@drawable/ic_baseline_person_outline_24"
+                android:drawablePadding="14dp"
+                android:textSize="18sp"
+                android:textColor="#020203"
+                android:paddingVertical="10dp"
+                android:layout_marginTop="10dp"
+                android:layout_below="@id/adsText"
+                />
+
+            <TextView
+                android:id="@+id/helpText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Help"
+                android:drawableStart="@drawable/ic_baseline_help_outline_24"
+                android:drawablePadding="14dp"
+                android:textSize="18sp"
+                android:textColor="#020203"
+                android:paddingVertical="10dp"
+                android:layout_marginTop="10dp"
+                android:layout_below="@id/accountText"
+                />
+
+            <TextView
+                android:id="@+id/aboutText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="About"
+                android:drawableStart="@drawable/ic_baseline_info_24"
+                android:drawablePadding="14dp"
+                android:textSize="18sp"
+                android:textColor="#020203"
+                android:paddingVertical="10dp"
+                android:layout_marginTop="10dp"
+                android:layout_below="@id/helpText"
+                />
+
+            <TextView
+                android:id="@+id/themeText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Theme"
+                android:drawableStart="@drawable/ic_baseline_color_lens_24"
+                android:drawablePadding="14dp"
+                android:textSize="18sp"
+                android:textColor="#020203"
+                android:paddingVertical="10dp"
+                android:layout_marginTop="10dp"
+                android:layout_below="@id/aboutText"/>
+
+            <TextView
+                android:id="@+id/facebookText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="FACEBOOK"
+                android:textSize="20sp"
+                android:textColor="#020203"
+                android:layout_marginTop="25dp"
+                android:textStyle="bold"
+                android:layout_below="@id/themeText"/>
+
+            <TextView
+                android:id="@+id/accountsCenterText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Accounts Center"
+                android:textSize="18sp"
+                android:layout_marginTop="10dp"
+                android:textColor= "#023bf5"
+                android:layout_below="@id/facebookText"
+                />
+
+            <TextView
+                android:id="@+id/simpleText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Control settings for connected experiences across Instagram, the Facebook app and Messenger, including story and post sharing and logging in."
+                android:textSize="16sp"
+                android:layout_marginTop="10dp"
+                android:gravity="start"
+                android:layout_below="@id/accountsCenterText"
+                />
+
+            <TextView
+                android:id="@+id/loginsText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Logins"
+                android:textSize="20sp"
+                android:textColor="#020203"
+                android:layout_marginTop="25dp"
+                android:textStyle="bold"
+                android:layout_below="@id/simpleText"
+                />
+
+            <TextView
+                android:id="@+id/addAccountText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Add Account"
+                android:textSize="18sp"
+                android:layout_marginTop="22dp"
+                android:textColor= "#023bf5"
+                android:layout_below="@id/loginsText"
+                />
+
+            <TextView
+                android:id="@+id/logOutText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Log Out"
+                android:textSize="18sp"
+                android:layout_marginTop="22dp"
+                android:textColor= "#023bf5"
+                android:layout_below="@id/addAccountText"
+                />
+
+        </RelativeLayout>
+    </ScrollView>
+</RelativeLayout>
