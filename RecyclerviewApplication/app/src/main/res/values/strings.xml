@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">Recyclerview Application</string>
+    <string name="switch_text">Switch</string>
+</resources>
