@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">RecyclerView Multiple View Application</string>
+    <string name="item1">Item 1</string>
+    <string name="item2">Item 2</string>
+    <string name="switchText">Switch</string>
+    <string name="add_message_text">Add Message</string>
+    <string name="person1_text">P1</string>
+    <string name="person2_text">P2</string>
+    <string name="random">In ActivityAwesomeBinding.java, view binding generates a public inflate method. The one argument version passes null as the parent view and doesn’t attach to parent. View binding also exposes a three argument version of inflate that lets you pass the parent and attachToParent parameters when needed.
+The call to bind is where the magic happens. It will take the inflated layout and bind all of the properties, with some error checking added to generate readable error messages.</string>
+</resources>
