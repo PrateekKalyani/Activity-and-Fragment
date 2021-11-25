@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">Multiple View Application</string>
+    <string name="post_text_one">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime mollitia, molestiae quas vel sint commodi repudiandae consequuntur voluptatum laborumc numquam blanditiis harum quisquam eius sed odit fugiat iusto fuga praesentium optio, eaque rerum! Provident similique accusantium nemo autem. Veritatis obcaecati tenetur iure eius earum ut molestias architecto voluptate aliquam nihil, eveniet aliquid culpa officia aut! Impedit sit sunt quaerat, odit, tenetur error, harum nesciunt ipsum debitis quas aliquid. Reprehenderit, quia. Quo neque error repudiandae fuga? Ipsa laudantium molestias eos
+    </string>
+    <string name="image_url_one">https://cdn.pixabay.com/photo/2015/04/23/22/00/tree-736885__340.jpg</string>
+</resources>
