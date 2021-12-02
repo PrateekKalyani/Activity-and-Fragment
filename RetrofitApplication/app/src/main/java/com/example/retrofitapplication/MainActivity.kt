@@ -5,6 +5,7 @@ import android.os.Bundle
 import android.widget.Toast
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.retrofitapplication.databinding.ActivityMainBinding
+import com.example.retrofitapplication.network.RestClient
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
@@ -28,7 +29,6 @@ class MainActivity : AppCompatActivity() {
         binding.productRecyclerView.run {
             layoutManager = LinearLayoutManager(this@MainActivity)
             adapter = ProductAdapter(
-                context = this@MainActivity,
                 productList = productList
             )
         }
@@ -36,9 +36,7 @@ class MainActivity : AppCompatActivity() {
 
     private fun getProductData() {
 
-        val apiInterface = ApiService.create().getData()
-
-        apiInterface.enqueue( object : Callback<List<ProductModel>> {
+        RestClient.getApiService().getData().enqueue( object : Callback<List<ProductModel>> {
 
             override fun onResponse(
                 call: Call<List<ProductModel>>,

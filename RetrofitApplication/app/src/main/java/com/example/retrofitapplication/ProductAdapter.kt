@@ -1,6 +1,5 @@
 package com.example.retrofitapplication
 
-import android.content.Context
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
@@ -8,16 +7,15 @@ import com.bumptech.glide.Glide
 import com.example.retrofitapplication.databinding.SingleProductItemBinding
 
 class ProductAdapter(
-    private val productList : List<ProductModel>,
-    private val context : Context
-    ) : RecyclerView.Adapter<ProductAdapter.ProductViewHolder>(){
+    private val productList : List<ProductModel>) : RecyclerView.Adapter<ProductAdapter.ProductViewHolder>(){
 
     class ProductViewHolder(private val binding : SingleProductItemBinding) : RecyclerView.ViewHolder(binding.root) {
 
-        fun bind(
-            product : ProductModel,
-            context : Context) {
+        private val context by lazy { binding.root.context }
 
+        fun bind(
+            product : ProductModel
+        ) {
             binding.run {
                 productTitle.text = product.title
                 productDescription.text = product.description
@@ -41,7 +39,7 @@ class ProductAdapter(
 
     override fun onBindViewHolder(holder: ProductViewHolder, position: Int) {
 
-        holder.bind(product = productList[position], context = context)
+        holder.bind(product = productList[position])
     }
 
     override fun getItemCount(): Int {
