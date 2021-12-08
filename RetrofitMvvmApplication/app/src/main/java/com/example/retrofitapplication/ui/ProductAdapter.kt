@@ -1,13 +1,16 @@
-package com.example.retrofitapplication
+package com.example.retrofitapplication.ui
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
+import com.example.retrofitapplication.ProductModel
+import com.example.retrofitapplication.R
 import com.example.retrofitapplication.databinding.SingleProductItemBinding
 
-class ProductAdapter(
-    private val productList : List<ProductModel>) : RecyclerView.Adapter<ProductAdapter.ProductViewHolder>(){
+class ProductAdapter: RecyclerView.Adapter<ProductAdapter.ProductViewHolder>(){
+
+    private val productList by lazy { mutableListOf<ProductModel>() }
 
     class ProductViewHolder(private val binding : SingleProductItemBinding) : RecyclerView.ViewHolder(binding.root) {
 
@@ -44,5 +47,10 @@ class ProductAdapter(
 
     override fun getItemCount(): Int {
         return productList.size
+    }
+
+    fun submitList(productList : List<ProductModel>) {
+        this.productList.addAll(productList)
+        notifyDataSetChanged()
     }
 }

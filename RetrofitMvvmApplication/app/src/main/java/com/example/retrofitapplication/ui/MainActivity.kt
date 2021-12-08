@@ -1,24 +1,20 @@
-package com.example.retrofitapplication
+package com.example.retrofitapplication.ui
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.retrofitapplication.databinding.ActivityMainBinding
-import com.example.retrofitapplication.network.RestClient
-import retrofit2.Call
-import retrofit2.Callback
-import retrofit2.Response
-import retrofit2.Retrofit
-import retrofit2.converter.gson.GsonConverterFactory
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class MainActivity : AppCompatActivity() {
 
     private val binding by lazy { ActivityMainBinding.inflate(layoutInflater) }
-    private val productList  = mutableListOf<ProductModel>()
-    private val viewModel by lazy {ViewModelProvider(this, ViewModelProvider.AndroidViewModelFactory.getInstance(application)).get(ProductViewModel::class.java)}
+    private val viewModel : ProductViewModel by lazy {
+        ViewModelProvider(this).get(ProductViewModel::class.java)
+    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -30,26 +26,18 @@ class MainActivity : AppCompatActivity() {
 
     private fun setRecyclerView() {
 
-        println("prouduct list ${productList}")
-
-
         binding.productRecyclerView.run {
             layoutManager = LinearLayoutManager(this@MainActivity)
-            adapter = ProductAdapter(
-                productList = productList
-            )
+            adapter = ProductAdapter()
         }
-
     }
 
     private fun setProductList() {
 
         viewModel.productList.observe(this, Observer {list ->
             if (list != null) {
-                productList.addAll(list)
-                binding.productRecyclerView.adapter!!.notifyDataSetChanged()
+                (binding.productRecyclerView.adapter as ProductAdapter).submitList(list)
             }
         })
-
     }
 }
