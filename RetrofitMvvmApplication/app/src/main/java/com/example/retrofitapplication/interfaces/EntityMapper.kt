@@ -1,4 +1,4 @@
-package com.example.retrofitapplication.`interface`
+package com.example.retrofitapplication.interfaces
 
 interface EntityMapper <Entity, DomainModel> {
 

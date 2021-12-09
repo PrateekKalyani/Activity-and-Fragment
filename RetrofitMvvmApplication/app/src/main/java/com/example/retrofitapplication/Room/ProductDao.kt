@@ -1,4 +1,4 @@
-package com.example.retrofitapplication.Room
+package com.example.retrofitapplication.room
 
 import androidx.lifecycle.LiveData
 import androidx.room.Dao
@@ -11,6 +11,9 @@ interface ProductDao {
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     fun insert(product : ProductEntity)
+
+    @Insert(onConflict = OnConflictStrategy.REPLACE)
+    fun insertProducts(productList : List<ProductEntity>)
 
     @Query("SELECT * FROM products")
     fun getProducts() : LiveData<List<ProductEntity>>

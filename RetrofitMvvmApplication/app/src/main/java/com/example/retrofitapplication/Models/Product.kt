@@ -1,4 +1,4 @@
-package com.example.retrofitapplication.Models
+package com.example.retrofitapplication.models
 
 import com.example.retrofitapplication.RatingModel
 

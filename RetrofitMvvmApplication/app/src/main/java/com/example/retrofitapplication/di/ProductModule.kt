@@ -5,7 +5,7 @@ import com.example.retrofitapplication.data.ProductRemoteDataSource
 import com.example.retrofitapplication.data.ProductRemoteDataSourceImpl
 import com.example.retrofitapplication.domain.ProductRepository
 import com.example.retrofitapplication.domain.ProductRepositoryImpl
-import com.example.retrofitapplication.domain.ProductUserCase
+import com.example.retrofitapplication.domain.ProductUseCase
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -26,8 +26,8 @@ object ProductModule {
     }
 
     @Provides
-    fun getProductUserCase(productRepository: ProductRepository) : ProductUserCase {
+    fun getProductUserCase(productRepository: ProductRepository) : ProductUseCase {
 
-        return ProductUserCase(productRepository =  productRepository)
+        return ProductUseCase(productRepository =  productRepository)
     }
 }

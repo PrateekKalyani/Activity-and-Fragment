@@ -4,7 +4,7 @@ import androidx.lifecycle.LiveData
 import com.example.retrofitapplication.ProductModel
 import javax.inject.Inject
 
-class ProductUserCase @Inject constructor(
+class ProductUseCase @Inject constructor(
     private val productRepository: ProductRepository
 ) {
 

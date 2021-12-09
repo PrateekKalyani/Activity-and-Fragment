@@ -2,8 +2,8 @@ package com.example.retrofitapplication.di
 
 import android.content.Context
 import androidx.room.Room
-import com.example.retrofitapplication.Room.ProductDao
-import com.example.retrofitapplication.Room.ProductDatabase
+import com.example.retrofitapplication.room.ProductDao
+import com.example.retrofitapplication.room.ProductDatabase
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn

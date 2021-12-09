@@ -1,16 +1,14 @@
-package com.example.retrofitapplication.`interface`
+package com.example.retrofitapplication.interfaces
 
-import com.example.retrofitapplication.Models.Product
-import com.example.retrofitapplication.ProductModel
+import com.example.retrofitapplication.models.Product
+import com.example.retrofitapplication.room.ProductEntity
 import javax.inject.Inject
 
-class NetworkMapper
-    @Inject
-    constructor()
-    : EntityMapper<ProductModel, Product>
-{
-    override fun mapFromEntity(entity: ProductModel): Product {
-
+class CacheMapper
+@Inject
+constructor()
+    : EntityMapper<ProductEntity, Product>{
+    override fun mapFromEntity(entity: ProductEntity): Product {
         return Product(
             id = entity.id,
             title = entity.title,
@@ -22,9 +20,8 @@ class NetworkMapper
         )
     }
 
-    override fun mapToEntity(domainModel: Product): ProductModel {
-
-        return ProductModel(
+    override fun mapToEntity(domainModel: Product): ProductEntity {
+        return ProductEntity(
             id = domainModel.id,
             title = domainModel.title,
             price = domainModel.price,
@@ -35,7 +32,7 @@ class NetworkMapper
         )
     }
 
-    fun mapFromEntityList(entities : List<ProductModel>) : List<Product>{
+    fun mapFromEntityList(entities : List<ProductEntity>) : List<Product>{
         return entities.map { mapFromEntity(it) }
     }
 }
